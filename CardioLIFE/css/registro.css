@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #8A2BE2, #3B02BE);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #f72585;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #8A2BE2, #3B02BE);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideInFromTop 0.8s ease-out forwards;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    animation: fadeIn 1.2s ease-out 0.5s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+.logo h1 {
+    font-size: 1.5rem;
+    color: #eee;
+}
+.nav-menu {
+    display: flex;
+    list-style: none;
+    animation: fadeIn 1s ease-out 1s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.nav-menu li {
+    margin: 0 15px;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 20px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+    color: #aaa;
+}
+.user-actions {
+    display: flex;
+    align-items: center;
+    animation: fadeIn 1s ease-out 0.7s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.download-btn {
+    background-color: #f506d5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.5s ease-out 1.2s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.download-btn:hover {
+    background-color: #88066c;
+}
+.auth-links {
+    display: flex;
+}
+.auth-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #eee;
+    transition: color 0.3s ease;
+}
+.auth-links a:hover {
+    color: #4285F4;
+}
+.auth-links a.register {
+    color: #f72585;
+    font-size: 18px;
+    font-weight: 600;
+}
+.auth-links a.register:hover {
+    color: #88066c;
+    font-weight: 600;
+    transition: all .5s ease;
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/*Diseño del header moviles*/
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: linear-gradient(to right, #8A2BE2, #3B02BE);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 99;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block !important;
+    z-index: 99;
+}
+.mobile-menu ul {
+    list-style: none;
+}
+.mobile-menu li {
+    margin: 15px 0;
+}
+.mobile-menu a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 16px;
+    display: block;
+    transition: color 0.3s ease;
+}
+.mobile-menu a:hover {
+    color: #aaa;
+}
+.mobile-menu .auth-links-mobile {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.mobile-menu .auth-links-mobile a.register {
+    color: #f72585;
+    font-weight: 600;
+}
+.mobile-menu .auth-links-mobile a.register:hover {
+    color: #88066c;
+}
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+    }
+    nav.desktop-nav {
+        display: none;
+    }
+    .auth-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .header-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .user-actions .download-btn {
+        display: none;
+    }
+    .mobile-actions .download-btn {
+        display: none;
+    }
+}
+
+/* Registration Form Section */
+.registration-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(90, 24, 154, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.registration-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(247, 37, 133, 0.2));
+    z-index: 0;
+}
+
+.registration-section::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(59, 2, 190, 0.1), rgba(247, 37, 133, 0.1));
+    z-index: 0;
+}
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.registration-title {
+    color: #5a189a;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.registration-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #f72585, #5a189a);
+    animation: expandWidth 1.5s ease-out forwards;
+}
+
+.registration-subtitle {
+    color: #7b2cbf;
+    font-size: 1.2rem;
+}
+
+.registration-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.benefits-column {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5a189a;
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #7b2cbf;
+    box-shadow: 0 0 0 2px rgba(123, 44, 191, 0.2);
+    outline: none;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235a189a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.form-select:focus {
+    border-color: #7b2cbf;
+    box-shadow: 0 0 0 2px rgba(123, 44, 191, 0.2);
+    outline: none;
+}
+
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-checkbox {
+    margin-right: 10px;
+    accent-color: #f72585;
+    width: 18px;
+    height: 18px;
+}
+
+.form-checkbox-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-checkbox-label a {
+    color: #7b2cbf;
+    text-decoration: none;
+}
+
+.form-checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.form-button {
+    background: linear-gradient(to right, #f72585, #7b2cbf);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-button:hover {
+    background: linear-gradient(to right, #b5179e, #5a189a);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(247, 37, 133, 0.3);
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefit-item {
+    margin-bottom: 20px;
+    padding-left: 35px;
+    position: relative;
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f72585' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+}
+
+.benefit-title {
+    color: #5a189a;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.benefit-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.social-login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-login-title {
+    position: relative;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-login-title::before,
+.social-login-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.social-login-title span {
+    padding: 0 15px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.img-registro{
+    width: 30px;
+}
+
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-link a {
+    color: #7b2cbf;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #8A2BE2, #3B02BE);
+    color: #fff;
+    padding: 30px 0;
+    animation: slideInFromBottom 1s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-column {
+    width: 30%;
+    margin-bottom: 20px;
+    opacity: 0;
+}
+.footer-column.visible {
+    animation: fadeIn 1s ease-out forwards;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.footer-logo h3 {
+    font-size: 18px;
+}
+.footer-about {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f72585;
+}
+.footer-menu {
+    list-style: none;
+}
+
+.footer-menu li {
+    margin-bottom: 8px;
+}
+.footer-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-menu a:hover {
+    color: #f72585;
+}
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+}
+@media (max-width: 768px) {
+    .footer-column {
+        width: 48%;
+    }
+}
+@media (max-width: 576px) {
+    .footer-column {
+        width: 100%;
+    }
+}
+
+/*Animaciones*/
+.form-group {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.form-group.form-animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Input focus animation */
+.input-focus .form-label {
+    color: #7b2cbf;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Button hover pulse effect */
+.form-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.form-button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Registration title animation */
+.registration-title.animated::after {
+    animation: expandWidth 1.5s ease-out forwards;
+}
+
+/* Benefit items hover effect */
+.benefit-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(90, 24, 154, 0.1);
+}
+
+/* Social buttons animation */
+.social-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.social-button:hover::before {
+    left: 100%;
+}
+
+/* Form checkbox animation */
+.form-checkbox {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-checkbox:checked {
+    transform: scale(1.1);
+}
+
+/* Mobile menu toggle animation */
+.menu-toggle span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Enhanced footer animation */
+.footer-column {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.footer-column.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Additional animations */
+.form-input:focus::placeholder {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Success check animation */
+@keyframes checkmark {
+    0% { 
+        stroke-dashoffset: 100; 
+    }
+    100% { 
+        stroke-dashoffset: 0; 
+    }
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4CAF50;
+    fill: none;
+    animation: checkmark 0.8s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    box-shadow: 0px 0px 0px #4CAF50;
+    animation: fill 0.4s ease-in-out 0.4s forwards;
+    position: relative;
+    margin: 0 auto;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: checkmark 0.8s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: 0px 0px 0px 30px rgba(76, 175, 80, 0);
+    }
+}

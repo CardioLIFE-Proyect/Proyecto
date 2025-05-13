@@ -1,0 +1,595 @@
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    max-height: 500px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.about-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    animation: scaleIn 1.5s ease-out forwards;
+}
+
+.about-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+
+.about-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInFromBottom 1s ease-out 0.8s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.about-hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: slideInFromBottom 1s ease-out 1.1s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    line-height: 1.5;
+}
+
+/* Estilos para la sección de misión y valores */
+.mission-values-section {
+    padding: 60px 20px;
+    margin: 60px auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.mission-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.mission-card {
+    flex: 1;
+    background: linear-gradient(135deg, #f9f5ff, #fff);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(90, 24, 154, 0.1);
+    text-align: center;
+    color: #333;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.mission-values-section.visible .mission-card {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.mission-values-section.visible .mission-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15);
+}
+
+.mission-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #8A2BE2, #f72585);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.mission-icon svg {
+    width: 35px;
+    height: 35px;
+    color: white;
+}
+
+.mission-card h2 {
+    font-size: 1.8rem;
+    color: #5a189a;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.mission-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #f72585, #5a189a);
+    transition: width 0.5s ease;
+}
+
+.mission-card:hover h2::after {
+    width: 80px;
+}
+
+.mission-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Valores */
+.values-title {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #5a189a;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.values-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #f72585, #5a189a);
+    transition: width 1.5s ease;
+}
+
+.mission-values-section.visible .values-title::after {
+    width: 100%;
+}
+
+.values-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.value-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: calc(50% - 25px);
+    max-width: 280px;
+    box-shadow: 0 8px 20px rgba(90, 24, 154, 0.1);
+    transition: all 0.3s ease;
+    color: #333;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.mission-values-section.visible .value-card {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.mission-values-section.visible .value-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mission-values-section.visible .value-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.mission-values-section.visible .value-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(90, 24, 154, 0.15);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8A2BE2, #f72585);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.value-icon svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    color: #5a189a;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Equipo - adaptaciones para mantener el estilo general */
+.team-section {
+    background: linear-gradient(to right, rgba(250, 245, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+    url('../Imagenes CardioLIFE/Logo CardioLIFE.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    border-radius: 15px;
+}
+
+/* Logros */
+.achievements-section {
+    padding: 60px 20px;
+    margin: 80px auto;
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-fill-mode: forwards;
+}
+
+.achievements-title {
+    font-size: 2.3rem;
+    color: #5a189a;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.achievements-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #f72585, #5a189a);
+    transition: width 1.5s ease;
+}
+
+.achievements-section.visible .achievements-title::after {
+    width: 80%;
+}
+
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.achievement-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: calc(25% - 30px);
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(90, 24, 154, 0.1);
+    transition: all 0.3s ease;
+    color: #333;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.achievements-section.visible .achievement-card {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.achievements-section.visible .achievement-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.achievements-section.visible .achievement-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.achievements-section.visible .achievement-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15);
+}
+
+.achievement-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #8A2BE2, #f72585);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.achievement-card p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Socios y colaboradores */
+.partners-section {
+    padding: 60px 20px;
+    margin: 60px auto 80px;
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+    background-color: #f9f5ff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(90, 24, 154, 0.08);
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-fill-mode: forwards;
+}
+
+.partners-title {
+    font-size: 2.3rem;
+    color: #5a189a;
+    margin-bottom: 15px;
+}
+
+.partners-subtitle {
+    font-size: 1.2rem;
+    color: #7b2cbf;
+    margin-bottom: 40px;
+}
+
+.partners-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.partner-logo {
+    background: white;
+    height: 100px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(90, 24, 154, 0.08);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #5a189a;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.partners-section.visible .partner-logo {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.partners-section.visible .partner-logo:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.partners-section.visible .partner-logo:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.partners-section.visible .partner-logo:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.partners-section.visible .partner-logo:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(90, 24, 154, 0.15);
+}
+
+/* Estilos para la sección about-intro-section */
+.about-intro-section {
+    position: relative;
+    background: linear-gradient(135deg, #f9f5ff, #fff);
+    overflow: hidden;
+}
+
+.about-intro-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(247, 37, 133, 0.1));
+    z-index: 0;
+}
+
+.about-intro-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(59, 2, 190, 0.05), rgba(247, 37, 133, 0.05));
+    z-index: 0;
+}
+
+/* Animaciones adicionales para la historia */
+.about-intro-section .text-content {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 1s ease;
+}
+
+.about-intro-section.visible .text-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-intro-section .image-container {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 1s ease;
+}
+
+.about-intro-section.visible .image-container {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Estilos responsivos adicionales */
+@media (max-width: 992px) {
+    .mission-container {
+        flex-direction: column;
+    }
+    
+    .mission-card {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+    
+    .value-card {
+        width: calc(50% - 25px);
+        max-width: 280px;
+    }
+    
+    .achievement-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .mission-card h2 {
+        font-size: 1.6rem;
+    }
+    
+    .mission-card p {
+        font-size: 1rem;
+    }
+    
+    .value-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .partner-logo {
+        width: 150px;
+        height: 80px;
+    }
+    
+    .achievements-title,
+    .partners-title,
+    .values-title {
+        font-size: 2rem;
+    }
+    
+    .achievement-number {
+        font-size: 2.5rem;
+    }
+    
+    .achievement-card p,
+    .partner-logo {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero-title {
+        font-size: 2rem;
+    }
+    
+    .about-hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .mission-card,
+    .value-card,
+    .achievement-card {
+        padding: 20px 15px;
+    }
+    
+    .achievement-card {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .mission-icon,
+    .value-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .mission-icon svg,
+    .value-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .partners-container {
+        gap: 20px;
+    }
+    
+    .partner-logo {
+        width: 130px;
+        height: 70px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animaciones específicas para about_us.html */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.achievements-section.animating .achievement-number {
+    animation: countUp 2s ease-out forwards;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Registro | CardioLIFE</title>
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../Imagenes CardioLIFE/Cardio-Life-Logo-Sin-Fondo.png" alt="Logo de CardioLIFE">
+                </a>
+            </div>
+            <div class="mobile-actions">
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <button class="download-btn">Descargar</button>
+            <div class="auth-links">
+                <a href="inicio_sesion.html" class="register">Iniciar Sesión</a>
+            </div>
+        </div>
+
+        <!-- Menu para moviles y tablets -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#"><strong>Descargar</strong></a></li>
+            </ul>
+            <div class="auth-links-mobile">
+                <li><a href="inicio_sesion.html" class="register">Iniciar Sesión</a></li>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="registration-section">
+            <div class="registration-header">
+                <h1 class="registration-title">Crear una cuenta</h1>
+                <p class="registration-subtitle">Únete a CardioLIFE y comienza a monitorear tu salud cardiovascular</p>
+            </div>
+
+            <div class="registration-content">
+                <div class="form-column">
+                    <form id="registrationForm" action="#" method="post">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre completo</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Ingresa tu nombre completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="ejemplo@correo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+57 XXX XXX XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthday" class="form-label">Fecha de nacimiento</label>
+                            <input type="date" id="birthday" name="birthday" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Mínimo 8 caracteres" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Repite tu contraseña" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender" class="form-label">Género</label>
+                            <select id="gender" name="gender" class="form-select">
+                                <option value="">Seleccionar</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="otro">Otro</option>
+                                <option value="prefiero_no_decir">Prefiero no decir</option>
+                            </select>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="termsCheck" name="termsCheck" class="form-checkbox" required>
+                            <label for="termsCheck" class="form-checkbox-label">
+                                He leído y acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="newsletterCheck" name="newsletterCheck" class="form-checkbox">
+                            <label for="newsletterCheck" class="form-checkbox-label">
+                                Quiero recibir noticias y actualizaciones por correo electrónico
+                            </label>
+                        </div>
+
+                        <button type="submit" class="form-button">Crear mi cuenta</button>
+                    </form>
+
+                    <div class="social-login">
+                        <div class="social-login-title">
+                            <span>O regístrate con</span>
+                        </div>
+                        <div class="social-buttons">
+                            <button class="social-button" aria-label="Registrarse con Google">
+                                <img src="../Imagenes CardioLIFE/google.svg" alt="google logo" class="google-img img-registro">
+                            </button>
+
+                            <button class="social-button" aria-label="Registrarse con Apple">
+                                <img src="../Imagenes CardioLIFE/apple.svg" alt="apple logo" class="apple-img img-registro">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="login-link">
+                        ¿Ya tienes una cuenta? <a href="inicio_sesion.html">Iniciar sesión</a>
+                    </div>
+                </div>
+
+                <div class="benefits-column">
+                    <h3 style="color: #5a189a; margin-bottom: 20px;">Beneficios de unirte a CardioLIFE</h3>
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <h4 class="benefit-title">Monitoreo personalizado</h4>
+                            <p class="benefit-description">Accede a un seguimiento detallado de tu ritmo cardíaco y otros parámetros vitales adaptados a tu perfil de salud.</p>
+                        </li>
+                        <li class="benefit-item">
+                            <h4 class="benefit-title">Alertas en tiempo real</h4>
+                            <p class="benefit-description">Recibe notificaciones inmediatas cuando se detecten anomalías en tus parámetros cardiovasculares.</p>
+                        </li>
+                        <li class="benefit-item">
+                            <h4 class="benefit-title">Consejos personalizados</h4>
+                            <p class="benefit-description">Obtén recomendaciones específicas para mejorar tu salud cardiovascular basadas en tus datos.</p>
+                        </li>
+                        <li class="benefit-item">
+                            <h4 class="benefit-title">Compartir con especialistas</h4>
+                            <p class="benefit-description">Facilita la comunicación con profesionales de la salud compartiendo tus datos de forma segura.</p>
+                        </li>
+                        <li class="benefit-item">
+                            <h4 class="benefit-title">Historial completo</h4>
+                            <p class="benefit-description">Accede a tu historial de datos cardiovasculares en cualquier momento y desde cualquier dispositivo.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../Imagenes CardioLIFE/Icono app CardioLIFE.jpg" alt="CardioLIFE Logo">
+                    <h3>CardioLIFE</h3>
+                </div>
+                <p class="footer-about">
+                    CardioLIFE es una empresa dedicada a proporcionar soluciones innovadoras para el cuidado y monitoreo de la salud cardiovascular.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Menú Principal</h3>
+                <ul class="footer-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Descargar</a></li>
+                    <li><a href="registro.html">Registrarse</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Información Legal</h3>
+                <ul class="footer-menu">
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="cookies.html">Política de Cookies</a></li>
+                </ul>
+                <div class="footer-contact">
+                    <h3>Contáctanos</h3>
+                    <p style="font-size: 14px; margin-bottom: 5px;">cardiolife0@gmail.com</p>
+                    <p style="font-size: 14px;">+57 321 456 7890</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                CardioLIFE © 2025 - Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+    <script src="../js/registro.js"></script>
+
+</body>
+</html>

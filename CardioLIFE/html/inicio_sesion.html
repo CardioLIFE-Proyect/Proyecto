@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/inicio_sesion.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Iniciar Sesión | CardioLIFE</title>
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../Imagenes CardioLIFE/Cardio-Life-Logo-Sin-Fondo.png" alt="Logo de CardioLIFE">
+                </a>
+            </div>
+            <div class="mobile-actions">
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <button class="download-btn">Descargar</button>
+            <div class="auth-links">
+                <a href="registro.html" class="register">Registrarse</a>
+            </div>
+        </div>
+
+        <!-- Menu para moviles y tablets -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#"><strong>Descargar</strong></a></li>
+            </ul>
+            <div class="auth-links-mobile">
+                <li><a href="registro.html" class="register">Registrarse</a></li>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="login-header">
+                <h1 class="login-title">Iniciar Sesión</h1>
+                <p class="login-subtitle">Accede a tu cuenta de CardioLIFE</p>
+            </div>
+
+            <div class="login-content">
+                <div class="form-column">
+                    <form id="loginForm" action="#" method="post">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="ejemplo@correo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Ingresa tu contraseña" required>
+                        </div>
+
+                        <div class="login-options">
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="rememberCheck" name="rememberCheck" class="form-checkbox">
+                                <label for="rememberCheck" class="form-checkbox-label">
+                                    Recordar sesión
+                                </label>
+                            </div>
+                            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                        </div>
+
+                        <button type="submit" class="form-button">Iniciar Sesión</button>
+                    </form>
+
+                    <div class="social-login">
+                        <div class="social-login-title">
+                            <span>O inicia sesión con</span>
+                        </div>
+                        <div class="social-buttons">
+                            <button class="social-button" aria-label="Iniciar sesión con Google">
+                                <img src="../Imagenes CardioLIFE/google.svg" alt="google logo" class="google-img img-login">
+                            </button>
+
+                            <button class="social-button" aria-label="Iniciar sesión con Apple">
+                                <img src="../Imagenes CardioLIFE/apple.svg" alt="apple logo" class="apple-img img-login">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="register-link">
+                        ¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a>
+                    </div>
+                </div>
+
+                <div class="info-column">
+                    <div class="login-card">
+                        <h3>¡Bienvenido de vuelta!</h3>
+                        <p>Accede a tu cuenta para continuar monitoreando tu salud cardiovascular y recibir recomendaciones personalizadas.</p>
+                    </div>
+                    <div class="login-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f72585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Monitoreo en tiempo real</h4>
+                                <p>Visualiza tus datos cardiovasculares actualizados.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f72585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2v10M5 4v8M19 4v8"></path>
+                                    <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Panel personalizado</h4>
+                                <p>Accede a tu dashboard con información personalizada.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f72585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 12h8M4 12V5.5C4 4.67 4.4 4 5 4h4c.6 0 1 .67 1 1.5V12"></path>
+                                    <path d="M12 12h8M20 12V5.5c0-.83-.4-1.5-1-1.5h-4c-.6 0-1 .67-1 1.5V12"></path>
+                                    <path d="M2 20h20"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Historial médico</h4>
+                                <p>Revisa tu historial y progreso a lo largo del tiempo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../Imagenes CardioLIFE/Icono app CardioLIFE.jpg" alt="CardioLIFE Logo">
+                    <h3>CardioLIFE</h3>
+                </div>
+                <p class="footer-about">
+                    CardioLIFE es una empresa dedicada a proporcionar soluciones innovadoras para el cuidado y monitoreo de la salud cardiovascular.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Menú Principal</h3>
+                <ul class="footer-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Descargar</a></li>
+                    <li><a href="registro.html">Registrarse</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Información Legal</h3>
+                <ul class="footer-menu">
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="cookies.html">Política de Cookies</a></li>
+                </ul>
+                <div class="footer-contact">
+                    <h3>Contáctanos</h3>
+                    <p style="font-size: 14px; margin-bottom: 5px;">cardiolife0@gmail.com</p>
+                    <p style="font-size: 14px;">+57 321 456 7890</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                CardioLIFE © 2025 - Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+    <script src="../js/inicio_sesion.js"></script>
+
+</body>
+</html>
